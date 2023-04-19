@@ -18,6 +18,7 @@ function setup(){
   sea.addImage(seaImg);
   sea.scale=0.3;
 
+
   
   ship = createSprite(130,200,30,30);
   ship.addAnimation("movingShip",shipImg1);
@@ -28,9 +29,11 @@ function setup(){
 function draw() {
   background(0);
   
-//Uncomment the correct line to make the background move to create a forward moving effect for the boat.
- 
   sea.velocityX = -3;
-    
+
+  if(sea.x < 0){
+    sea.x = sea.width/8
+  }
+  
   drawSprites();
 }
